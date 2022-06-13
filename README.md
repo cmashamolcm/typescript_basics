@@ -10,8 +10,9 @@
 2. Type inference:
   - Derive the type based on the value assigned.
   - Eg: let name = "Asha"; //- here name has type *string*
-3. Deining types:
-  - Use *interface* - part of TS, not JS. Gets erased after compilation
+3. Defining types:
+  - Use Type (from ts. Not recommended over interface)
+  - Use *interface* - part of TS, not JS. **Most recommended**. Gets erased after compilation
   - Use *class* - part of JS itself. Not recommended if only purpose is type checking. Th reason is, the js file become bulky just because of type check as classes are not erased while transpiling the ts code.
   - Eg:
   ```
@@ -53,5 +54,23 @@
   ```
   Use it as
   `const user: User = new TestUser("Asha", 1);`
+  
+4. Type with function:
+    `function f1(): User{} //- returns type User`
+    `function f2(user: User){} //- parameter type User`
+5. JS Primitives:
+    - number
+    - null
+    - boolean
+    - bigint
+    - symbol
+    - string
+    - undefined
+6. TS primitives:
+    - JS Primitives (all 7 above) + 4 below
+    - any (- allow anything)
+    - void (a function that returns undefined or no return value)
+    - unknown (a type should be definied by someone using this type )
+    - never (type not possible to happen ever)
   
   
