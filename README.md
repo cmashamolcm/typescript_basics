@@ -14,7 +14,7 @@
   - Use Type (from ts. Not recommended over interface)
   - Use *interface* - part of TS, not JS. **Most recommended**. Gets erased after compilation
   - Use *class* - part of JS itself. Not recommended if only purpose is type checking. Th reason is, the js file become bulky just because of type check as classes are not erased while transpiling the ts code.
-  - Eg:
+  - Eg: **Define types using interface**
   ```
   interface User{ 
       name: string;
@@ -72,5 +72,11 @@
     - void (a function that returns undefined or no return value)
     - unknown (a type should be definied by someone using this type )
     - never (type not possible to happen ever)
-  
+7. **Defining types using <u>type</u>**  
+    2 ways
+    - use union
+      * type user = "Admin" | "Normal" | "Special" //-inference to String. But possible only 3 values
+      * type approved = true | false //- inference to boolean. Possible only true or false
+    - use generics
+      * type 
   
